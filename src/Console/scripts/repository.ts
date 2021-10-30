@@ -15,6 +15,3 @@ export class Repository extends GenerateFile {
         this.makeFile(repo_name, this.repo_path, repositoryDTO(repo_name), "Repository")
     }
 }
-//
-// const init = new Repository();
-// init.make()

@@ -19,6 +19,3 @@ export class Entity extends GenerateFile {
         this.makeFile(entity_name, this.interface_path, interfaceDTO(entity_name), "Interface")
     }
 }
-//
-// const init = new Entity();
-// init.make()
