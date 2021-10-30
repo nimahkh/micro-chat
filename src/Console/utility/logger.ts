@@ -2,7 +2,7 @@ import chalk from "chalk"
 
 type TLogger = void
 class Logger {
-    public log(log: string) : TLogger {
+    protected log(log: string) : TLogger {
         return console.log(log)
     }
     public info(message: string) : TLogger {

@@ -3,7 +3,6 @@ import GenerateFile from "../handlers/generateFile";
 import {IOption} from "../handlers/Commander";
 import {Entity} from "./entity";
 import {Repository} from "./repository";
-import Logger from "../utility/logger";
 
 export class Controller extends GenerateFile {
 
@@ -28,7 +27,6 @@ export class Controller extends GenerateFile {
     }
 
     public handleDtoRepoEntity() {
-        new Logger().info("okokokok")
         this.repository?.make(this.controller_name)
         this.entity?.make(this.controller_name)
     }
