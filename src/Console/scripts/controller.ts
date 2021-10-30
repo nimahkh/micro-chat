@@ -27,7 +27,7 @@ export class Controller extends GenerateFile {
     }
 
     public handleDtoRepoEntity() {
-        this.repository?.make(this.controller_name)
-        this.entity?.make(this.controller_name)
+        this.repository.make(this.controller_name)
+        this.entity.make(this.controller_name)
     }
 }
