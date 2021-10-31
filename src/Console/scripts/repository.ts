@@ -1,17 +1,15 @@
 import GenerateFile from "../handlers/generateFile";
-import {IOption} from "../handlers/Commander";
 import repositoryDTO from "../dto/Repository";
+import BaseScript from "./BaseScript";
+import {baseOptions} from "../utility/options";
 
-export class Repository extends GenerateFile {
+export class Repository extends GenerateFile implements BaseScript {
 
     private repo_path: string = "./src/HTTP/repositories"
     private repo_name: string = ""
 
     public make(name? :string){
-        const options : IOption[] = [
-            {flags : '-n, --name <name>', description: 'repository name'},
-        ]
-        const args = this.programs(options).parse(process.argv)
+        const args = this.programs(baseOptions).parse(process.argv)
         this.repo_name = name || args.opts().name
         this.makeFile(this.repo_name, this.repo_path, repositoryDTO(this.repo_name), "Repository", this.appendRepositoryToIndex.bind(this))
     }

@@ -1,10 +1,11 @@
 import controllerDTO from "../dto/Controller";
 import GenerateFile from "../handlers/generateFile";
-import {IOption} from "../handlers/Commander";
 import {Entity} from "./entity";
 import {Repository} from "./repository";
+import BaseScript from "./BaseScript";
+import {baseOptions} from "../utility/options";
 
-export class Controller extends GenerateFile {
+export class Controller extends GenerateFile implements BaseScript {
 
     private controller_path = "./src/HTTP/controllers"
     private controller_name: string = "";
@@ -18,10 +19,7 @@ export class Controller extends GenerateFile {
     }
 
     public make(name?: string) {
-        const options: IOption[] = [
-            {flags: '-n, --name <name>', description: 'controller name'},
-        ]
-        const args = this.programs(options).parse(process.argv)
+        const args = this.programs(baseOptions).parse(process.argv)
         this.controller_name = name || args.opts().name
         this.makeFile(this.controller_name, this.controller_path, controllerDTO(this.controller_name), "Controller", this.handleDtoRepoEntity.bind(this))
     }
