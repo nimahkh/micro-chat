@@ -12,7 +12,7 @@
     "make:controller": "./node_modules/.bin/ts-node ./src/Console/scripts/run/controller.ts --name",
     "make:entity": "./node_modules/.bin/ts-node ./src/Console/scripts/run/entity.ts --name",
     "make:repository": "./node_modules/.bin/ts-node ./src/Console/scripts/run/repository.ts --name",
-    "make:dto": ""
+    "make:dto": "./node_modules/.bin/ts-node ./src/Console/scripts/run/dto.ts --name"
   },
   "nodemonConfig": {
     "watch": [
