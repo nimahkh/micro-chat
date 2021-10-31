@@ -1,4 +1,4 @@
-const controllerDTO = (controller_name: string)=>
+const controllerDTO = (controller_name: string) : string =>
     `import IController from "./interfaces/Controller";
 import {${controller_name}Repository} from "../repositories/index";
 import ${controller_name}Entity from "../entities/${controller_name}Entity";

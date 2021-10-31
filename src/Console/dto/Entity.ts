@@ -1,4 +1,4 @@
-const entityDTO = (entity_name: string)=>
+const entityDTO = (entity_name: string) : string =>
     `import {I${entity_name}} from "./interfaces";
 import {Document} from "mongoose"
 

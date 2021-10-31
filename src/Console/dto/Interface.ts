@@ -1,4 +1,4 @@
-const interfaceDto = (interface_name: string)=>
+const interfaceDto = (interface_name: string): string =>
     `import {Document} from "mongoose"
 
 interface I${interface_name} extends Document {
