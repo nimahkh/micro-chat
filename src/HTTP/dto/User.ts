@@ -1,9 +1,13 @@
 import UserModel from "../entities/User";
-import {model, Schema} from "mongoose"
+import {model, Schema, Types} from "mongoose"
 
 class UserSchema {
     static get schema() {
         return new Schema({
+                _id: {
+                    type: Types.ObjectId,
+                    required: true
+                },
                 name: {
                     type: String,
                     required: true

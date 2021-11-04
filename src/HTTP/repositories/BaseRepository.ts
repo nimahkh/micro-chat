@@ -5,7 +5,7 @@ import {Document, Model, Types} from "mongoose"
 
 class BaseRepository<T extends Document> implements IRead<T>, IWrite<T> {
 
-    private _model: Model<Document>;
+    protected _model: Model<Document>;
 
     constructor(schemaModel: Model<Document>) {
         this._model = schemaModel;

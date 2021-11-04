@@ -1,1 +1,1 @@
-export type Types = "Controller" | "Entity" | "DTO" | "Repository"| "Middleware" | "Interface"
+export type Types = "Controller" | "Entity" | "DTO" | "Repository"| "Middleware" | "Interface" | "Route"
