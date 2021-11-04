@@ -1,6 +1,7 @@
 import controllerDTO from "../dto/Controller";
 import GenerateFile from "../handlers/generateFile";
 import {Entity} from "./entity";
+import {Dto} from "./dto";
 import {Repository} from "./repository";
 import BaseScript from "./BaseScript";
 import {baseOptions} from "../utility/options";
@@ -11,11 +12,13 @@ export class Controller extends GenerateFile implements BaseScript {
     private controller_name: string = "";
     private entity;
     private repository;
+    private dto;
 
     constructor() {
         super();
         this.entity = new Entity
         this.repository = new Repository
+        this.dto = new Dto;
     }
 
     public make(name?: string) {
@@ -27,5 +30,6 @@ export class Controller extends GenerateFile implements BaseScript {
     public handleDtoRepoEntity() {
         this.repository.make(this.controller_name)
         this.entity.make(this.controller_name)
+        this.dto.make(this.controller_name)
     }
 }
