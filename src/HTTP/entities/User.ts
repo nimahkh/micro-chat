@@ -9,11 +9,20 @@ class UserModel extends Document {
         this._user = user;
     }
 
+    get email (): string {
+        return this._user.email;
+    }
+
     get name (): string {
         return this._user.name;
     }
-    get avatar (): number {
+
+    get avatar (): string {
         return this._user.avatar;
+    }
+
+    get password (): string {
+        return this._user.password;
     }
 }
 

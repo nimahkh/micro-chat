@@ -12,7 +12,7 @@ class BaseRepository<T extends Document> implements IRead<T>, IWrite<T> {
     }
 
     create(item: T, callback: (error: any, result: Document) => void) {
-        this._model.create(item, callback);
+        item.save(callback);
     }
 
     retrieve(callback: (error: any, result: Document[]) => void) {

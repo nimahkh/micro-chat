@@ -1,8 +1,11 @@
-import {Document} from "mongoose"
+import {Document, Types} from "mongoose"
 
 interface IUser extends Document {
+    _id: Types.ObjectId;
     name: string;
-    avatar: number;
+    avatar: string;
+    password: string;
+    email: string;
 }
 
 export default IUser

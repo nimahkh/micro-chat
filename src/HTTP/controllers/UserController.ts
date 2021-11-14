@@ -6,21 +6,19 @@ import IResponse from "./interfaces/response";
 
 class UserController implements IController {
 
-    create(req: IRequest<UserModel>, res: IResponse<UserModel>): void {
+    repository : UserRepository;
+    constructor(userRepository : UserRepository) {
+        this.repository = userRepository;
+    }
+
+    create = (req: IRequest<UserModel>, res: IResponse<UserModel>): void => {
         try {
             const userModel: UserModel = req.body;
-            const user = new UserRepository();
-            user.create(userModel, (error, result) => {
-                if(error) res.send({"error": error});
-                else res.send({"success": result});
-            });
+            this.repository.createUser(userModel, res)
+        } catch (e) {
+            res.send({"error": "error in your request"+ e});
         }
-        catch (e)  {
-            console.log(e);
-            res.send({"error": "error in your request"});
-        }
-    };
-
+    }
 }
 
 export default UserController;
